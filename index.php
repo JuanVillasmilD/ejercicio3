@@ -37,7 +37,7 @@ unset($_POST['folder']);
     <title>Bloc de Notas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
@@ -88,7 +88,7 @@ unset($_POST['folder']);
                 ?>
                             <tr>
                                 <td><i class="fa-solid fa-folder-closed"></i> <a href="directorio.php?dir=<?php echo $direc ?>" class="card-link"><?php echo $direc ?></a></td>
-                                <td><?php echo date("F d Y", filemtime($dir)); ?></td>
+                                <td><?php date_default_timezone_set('America/Caracas'); echo date("d-m-Y H:i:s", filemtime($dir)); ?></td>
                                 <td>Carpeta</td>
                             </tr>
 

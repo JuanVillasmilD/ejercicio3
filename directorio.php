@@ -3,6 +3,7 @@
 if (isset($_GET['dir'])) {
     $dir = $_GET['dir'];
     $msg = null;
+    
 
     if (isset($_POST['createn'])) {
 
@@ -47,14 +48,14 @@ if (isset($_GET['dir'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <title><?php echo $dir ?></title>
 </head>
 
 <body>
     <nav class="navbar navbar-dark bg-black">
         <div class="container">
-            <a class="navbar-brand" href="index.php"><img style="width: 35px;" src="./img/left-arrow.png" alt=""> Inicio</a>
+            <a class="navbar-brand" href="index.php"><img style="width: 35px;" src="./assets/img/left-arrow.png" alt=""> Inicio</a>
         </div>
     </nav>
     <br>
@@ -123,7 +124,7 @@ if (isset($_GET['dir'])) {
                                         }
                                         ?>
                                     </td>
-                                    <td><?php echo date("F d Y", filemtime($file)); ?></td>
+                                    <td><?php date_default_timezone_set('America/Caracas'); echo date("d-m-Y H:i:s", filemtime($file)); ?></td>
                                     <td><?php echo filetype($file) ?></td>
                                     <td><?php echo filesize($file) ?> bytes</td>
                                 </tr>
