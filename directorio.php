@@ -11,7 +11,7 @@ if (isset($_GET['dir'])) {
             $name = $_POST['namen'];
             $dir = $_POST['dir'];
             $content = $_POST['contentn'];
-            $direct = "./files/$dir/$name.txt";
+            $direct = "files/$dir/$name.txt";
             $msg = '';
             try {
 
