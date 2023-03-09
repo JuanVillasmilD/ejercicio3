@@ -11,7 +11,7 @@ if (isset($_GET['dir'])) {
             $name = $_POST['namen'];
             $dir = $_POST['dir'];
             $content = $_POST['contentn'];
-            $direct = "files/$dir/$name.txt";
+            $direct = "./files/$dir/$name.txt";
             $msg = '';
             try {
 
@@ -98,14 +98,14 @@ if (isset($_GET['dir'])) {
 
                     <?php
 
-                    $directorio = "files/" . $dir;
+                    $directorio = "./files/" . $dir;
                     $direc  = scandir($directorio);
 
                     if (count($direc) > 2) {
                         foreach ($direc as $valor) {
                             if ('.' !== $valor && '..' !== $valor) {
 
-                                $file = "files\\" . $dir . '\\' . $valor;
+                                $file = "./files/" . $dir . '/' . $valor;
 
                                 if (filesize($file) > 0) {
                                     $contents = file_get_contents($file, FILE_USE_INCLUDE_PATH);

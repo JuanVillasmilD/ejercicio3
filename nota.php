@@ -7,7 +7,7 @@ if (isset($_GET['dir']) && isset($_GET['note'])) {
     header("Location: index.php");
 }
 
-$file = "files\\" . $dir . '\\' . $note;
+$file = "./files/" . $dir . '/' . $note;
 $filed = $note . '&dir=' . $dir;
 
 $file_contents = file_get_contents($file);
